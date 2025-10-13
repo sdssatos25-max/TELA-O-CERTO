@@ -126,31 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
         atualizarSaborSelecionado();
     }
 
-    // Código para o botão flutuante
-    const originalButton = document.getElementById('btn-comprar-original-unico');
-    let fixedButton = null;
-
-    if (originalButton) {
-        function handleScroll() {
-            if (window.scrollY > 400) {
-                if (!fixedButton) {
-                    fixedButton = originalButton.cloneNode(true);
-                    fixedButton.id = 'btn-comprar-fixo-unico';
-                    fixedButton.classList.add('btn-compra-fixo-inferior');
-                    // Copiar o link atual do botão original
-                    fixedButton.href = originalButton.href;
-                    document.body.appendChild(fixedButton);
-                }
-            } else {
-                if (fixedButton) {
-                    fixedButton.remove();
-                    fixedButton = null;
-                }
-            }
-        }
-        window.addEventListener('scroll', handleScroll);
-        handleScroll();
-    }
+    
 
     // Código para o frete dinâmico
     const customAddress = document.getElementById("custom-address");
