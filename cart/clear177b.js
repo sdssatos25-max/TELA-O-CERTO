@@ -1,0 +1,1 @@
+{"token":"hWN4AWd7otcLe3xise6wXAzy?key=72684ecf9c29ad90c2cc733508117068","note":null,"attributes":{},"original_total_price":0,"total_price":0,"total_discount":0,"total_weight":0.0,"item_count":0,"items":[],"requires_shipping":false,"currency":"BRL","items_subtotal_price":0,"cart_level_discount_applications":[],"discount_codes":[]}
