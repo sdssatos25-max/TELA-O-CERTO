@@ -1,0 +1,913 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Relâmpago</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="../css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "rt44igzb2h");
+    </script>
+
+    <script>
+        window.pixelId = "683e825ab1d2311db27bd150";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+    </script>
+
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
+
+
+
+
+
+</head>
+
+<body>
+
+    <div class="main-header-container">
+        <div class="main-header">
+            <a href="https://tela-o-certo.vercel.app/collections/produtos-selecionados-maratona-de-descontos.html"
+                class="voltar-link">
+                <svg aria-hidden="true" class="arrow-left-icon" viewbox="0 0 448 512"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z">
+                    </path>
+                </svg>
+                <b style="font-size: 14px; font-weight: 500;">Voltar</b>
+            </a>
+            <a href="https://tela-o-certo.vercel.app/collections/produtos-selecionados-maratona-de-descontos.html"
+                class="logo-link">
+                <img src="images/logo.png" alt="Logo da Loja" class="logo-img">
+            </a>
+            <a href="#" class="cart-icon" onclick="showCartSidebar(); return false;">
+                <svg aria-hidden="true" class="shopping-cart-icon" viewbox="0 0 576 512"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- ========== FAIXA DE ENVIO POR CIDADE (CUSTOM LIQUID) ========== -->
+    <div id="geo-shipbar" class="geo-shipbar" role="region" aria-label="Destino de envio">
+        <span class="geo-shipbar__left">
+            <!-- Ícone de localização (SVG inline) -->
+            <svg class="geo-shipbar__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                    d="M12 2C8.686 2 6 4.686 6 8c0 5.25 6 12 6 12s6-6.75 6-12c0-3.314-2.686-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z" />
+            </svg>
+            <span class="geo-shipbar__text">
+                Frete grátis para:
+                <strong class="geo-shipbar__city" data-city>detectando…</strong>
+                e região.</span>
+        </span>
+        <span class="geo-shipbar__chev" aria-hidden="true">›</span>
+    </div>
+
+    <style>
+        .geo-shipbar {
+            --bar-bg: #8201FF;
+            /* cor da faixa */
+            --bar-txt: #fff;
+            /* cor do texto/ícones */
+            --bar-height: 44px;
+            /* altura da faixa */
+            --bar-radius: 8px;
+            /* arredondamento */
+            --maxw: 1200px;
+            /* largura máxima opcional */
+            --padding-x: 14px;
+            /* padding horizontal */
+
+            background: var(--bar-bg);
+            color: var(--bar-txt);
+            height: var(--bar-height);
+            line-height: var(--bar-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--padding-x);
+            margin-top: 1px;
+            max-width: var(--maxw);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            user-select: none;
+        }
+
+        .geo-shipbar__left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        .geo-shipbar__icon {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 18px;
+            fill: currentColor;
+            opacity: .95;
+        }
+
+        .geo-shipbar__text {
+            font-size: .95rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .geo-shipbar__city {
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .geo-shipbar__chev {
+            font-size: 22px;
+            opacity: .9;
+        }
+
+        @media (max-width:480px) {
+            .geo-shipbar {
+                --bar-height: 42px;
+                --padding-x: 12px;
+            }
+
+            .geo-shipbar__text {
+                font-size: 12px;
+            }
+        }
+    </style>
+
+    <script>
+        (function () {
+            const cityEl = document.querySelector('#geo-shipbar [data-city]');
+            if (!cityEl) return;
+
+            const LS_KEY = 'geo_city_name_v1';
+            const FALLBACK_LABEL = 'sua região';
+
+            const setCity = (name) => {
+                const city = (name || '').toString().trim();
+                if (city) {
+                    localStorage.setItem(LS_KEY, city);
+                    cityEl.textContent = city;
+                } else {
+                    cityEl.textContent = FALLBACK_LABEL;
+                }
+            };
+
+            // 1) Usa cache se existir (instantâneo)
+            const cached = localStorage.getItem(LS_KEY);
+            if (cached) setCity(cached);
+
+            // Helper para fetch com timeout
+            const fetchWithTimeout = (url, ms = 4500) => {
+                const controller = new AbortController();
+                const t = setTimeout(() => controller.abort(), ms);
+                return fetch(url, { signal: controller.signal })
+                    .finally(() => clearTimeout(t));
+            };
+
+            // 2) Tenta ipapi.co (boa qualidade + CORS liberado)
+            fetchWithTimeout('https://ipapi.co/json/')
+                .then(r => r.ok ? r.json() : Promise.reject('ipapi.co not ok'))
+                .then(data => {
+                    if (data && (data.city || data.region)) {
+                        setCity(data.city || data.region);
+                        return; // sucesso
+                    }
+                    throw new Error('ipapi.co no city');
+                })
+                .catch(() => {
+                    // 3) Fallback: ipwho.is (sem token, CORS liberado)
+                    fetchWithTimeout('https://ipwho.is/')
+                        .then(r => r.ok ? r.json() : Promise.reject('ipwho.is not ok'))
+                        .then(data => setCity(data.city || data.region || data.country))
+                        .catch(() => {
+                            // 4) Último recurso: mantém cache (se havia) ou fallback genérico
+                            if (!cached) setCity('');
+                        });
+                });
+        })();
+    </script>
+    <!-- ========== /FAIXA DE ENVIO POR CIDADE ========== -->
+
+    <div class="product-container">
+        <div class="left-column">
+            <div class="product-stats div-mobile">
+                <span class="sold-count div-mobile">+5mil vendidos</span>
+                <span class="rating-1 div-mobile" onclick="scrollToOpinions()" style="cursor: pointer;">4.8 <b
+                        style="color: #ffc408">★ ★ ★ ★ ★</b> (1718)</span>
+            </div>
+            <img src="images/1.webp" class="product-image" id="mainImage">
+            <div class="thumbnail-gallery">
+                <div class="thumbnail-gallery-container">
+                    <img src="images/1.webp" class="thumbnail-image active" alt="Visualização 1 do Tênis">
+                    <img src="images/2.webp" class="thumbnail-image" alt="Visualização 2 do Tênis">
+                    <img src="images/3.webp" class="thumbnail-image" alt="Visualização 3 do Tênis">
+                    <img src="images/4.webp" class="thumbnail-image" alt="Visualização 4 do Tênis">
+                    <img src="images/5.webp" class="thumbnail-image" alt="Visualização 5 do Tênis">
+                </div>
+            </div><!-- BANNER ULTRA COMPACTO EM UMA LINHA -->
+            <div class="sale-banner compact nowrap">
+                <div class="sale-banner__inner">
+                    <div class="sale-banner__left">
+                        <span class="sale-banner__badge">
+                            <img src="https://www.emojiall.com/images/240/telegram/26a1.gif" alt="Promoção" />
+                        </span>
+                        <span class="sale-banner__title"> <img src="https://i.ibb.co/TxHynwQS/safafeqfe.png"
+                                alt="Oferta" /></span>
+                    </div>
+                    <div class="sale-banner__right">
+                        <span class="sale-banner__ends"></span>
+                        <div class="sale-banner__timer">
+                            <div class="sale-banner__part sale-banner__hours">00</div>
+                            <div class="sale-banner__sep">:</div>
+                            <div class="sale-banner__part sale-banner__minutes">29</div>
+                            <div class="sale-banner__sep">:</div>
+                            <div class="sale-banner__part sale-banner__seconds">26</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet');
+
+                .sale-banner.compact.nowrap {
+                    padding: 6px 20px;
+                    background-color: #FF8148;
+                    margin-top: 5px;
+                    margin-bottom: -20px;
+                    margin-right: -20px;
+                    margin-left: -20px;
+                    font-family: 'Roboto', sans-serif;
+                }
+
+                .sale-banner__inner {
+                    display: flex;
+                    overflow-y: hidden;
+                    overflow-x: hidden;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    /* nunca quebra linha */
+                    width: 100%;
+                }
+
+                .sale-banner__left,
+                .sale-banner__right {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .sale-banner__badge {
+                    width: 28px;
+                    height: 28px;
+                    font-size: 14px;
+                    background-color: #8201FF;
+                    color: #FF8148;
+                    font-weight: bold;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 8px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                    overflow: hidden;
+                }
+
+                .sale-banner__badge img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    /* o gif preenche o círculo */
+                }
+
+                .sale-banner__title img {
+                    width: 100%;
+                    height: 30px;
+                }
+
+                .sale-banner__title {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: #fff;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    white-space: nowrap;
+                }
+
+                .sale-banner__ends {
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: #fff;
+                    margin-right: 6px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    white-space: nowrap;
+                }
+
+                .sale-banner__timer {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .sale-banner__part {
+                    width: 32px;
+                    height: 32px;
+                    font-size: 25px;
+                    background-color: #FF8148;
+                    color: #ffffff;
+                    font-weight: bold;
+                    border-radius: 2px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 3px;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+                    white-space: nowrap;
+                }
+
+                .sale-banner__sep {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #fff;
+                    margin: 0 2px;
+                }
+
+                /* Mobile – mantém tudo na mesma linha (pode rolar horizontal) */
+                @media (max-width: 480px) {
+                    .sale-banner__inner {
+                        overflow-x: auto;
+                    }
+                }
+            </style>
+
+            <script>
+                (function () {
+                    var timerEl = document.querySelector('.sale-banner__timer');
+                    if (!timerEl) return;
+                    var endTime = new Date(Date.now() + 30 * 60 * 5778);
+                    function update() {
+                        var now = new Date(), diff = endTime - now;
+                        if (diff <= 0) {
+                            clearInterval(interval);
+                            ['hours', 'minutes', 'seconds'].forEach(p => {
+                                timerEl.querySelector('.sale-banner__' + p).textContent = '00';
+                            });
+                            return;
+                        }
+                        var hrs = Math.floor(diff / 1000 / 60 / 60),
+                            mins = Math.floor(diff / 1000 / 60) % 60,
+                            secs = Math.floor(diff / 1000) % 60;
+                        timerEl.querySelector('.sale-banner__hours').textContent = String(hrs).padStart(2, '0');
+                        timerEl.querySelector('.sale-banner__minutes').textContent = String(mins).padStart(2, '0');
+                        timerEl.querySelector('.sale-banner__seconds').textContent = String(secs).padStart(2, '0');
+                    }
+                    update();
+                    var interval = setInterval(update, 1000);
+                })();
+            </script>
+        </div>
+
+        <h1 class="product-title div-mobile">Tênis Olympikus Corre 4<svg class="verified-icon" viewbox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+            </svg></h1>
+
+
+
+        <div class="right-column">
+            <div class="product-info-container">
+                <span class="offer-badge-pc offer-badge">ESQUENTA BLACK FRIDAY NETSHOES 🔥</span>
+                <div class="divider div-desktop"></div>
+
+                <!-- Seção de Variações -->
+                <div class="product-variations">
+                    <h4 class="variation-title">Cor: <span id="selectedColor">Bege e Azul</span></h4>
+                    <div class="variation-options">
+                        <label class="variation-option active" data-color="Branco"
+                            data-link="https://seguro.nobrecobertores.store/api/public/shopify?product=1607832955767&store=16078">
+                            <input type="radio" name="color" value="branco" checked="">
+                            <img src="images/1.webp" alt="Branco" class="variation-image">
+                            <span class="variation-name">Bege e Azul</span>
+                        </label>
+
+                        <label class="variation-option" data-color="Preto e Vermelho"
+                            data-link="https://seguro.nobrecobertores.store/api/public/shopify?product=1607862357687&store=16078">
+                            <input type="radio" name="color" value="preto">
+                            <img src="images/2.webp" alt="Preto" class="variation-image">
+                            <span class="variation-name">Preto e Vermelho</span>
+                        </label>
+
+                    </div>
+                </div>
+
+                <!-- Seção de Tamanhos -->
+                <div class="product-variations">
+                    <h4 class="variation-title">Tamanho: <span id="selectedSize">38</span></h4>
+                    <div class="size-options">
+                        <label class="size-option" data-size="34">
+                            <input type="radio" name="size" value="34">
+                            <span class="size-number">34</span>
+                        </label>
+                        <label class="size-option" data-size="35">
+                            <input type="radio" name="size" value="35">
+                            <span class="size-number">35</span>
+                        </label>
+                        <label class="size-option" data-size="36">
+                            <input type="radio" name="size" value="36">
+                            <span class="size-number">36</span>
+                        </label>
+                        <label class="size-option" data-size="37">
+                            <input type="radio" name="size" value="37">
+                            <span class="size-number">37</span>
+                        </label>
+                        <label class="size-option active" data-size="38">
+                            <input type="radio" name="size" value="38" checked="">
+                            <span class="size-number">38</span>
+                        </label>
+                        <label class="size-option" data-size="39">
+                            <input type="radio" name="size" value="39">
+                            <span class="size-number">39</span>
+                        </label>
+                        <label class="size-option" data-size="40">
+                            <input type="radio" name="size" value="40">
+                            <span class="size-number">40</span>
+                        </label>
+                        <label class="size-option" data-size="41">
+                            <input type="radio" name="size" value="41">
+                            <span class="size-number">41</span>
+                        </label>
+                        <label class="size-option" data-size="42">
+                            <input type="radio" name="size" value="42">
+                            <span class="size-number">42</span>
+                        </label>
+                        <label class="size-option" data-size="43">
+                            <input type="radio" name="size" value="43">
+                            <span class="size-number">43</span>
+                        </label>
+                        <label class="size-option" data-size="44">
+                            <input type="radio" name="size" value="44">
+                            <span class="size-number">44</span>
+                        </label>
+                        <label class="size-option" data-size="45">
+                            <input type="radio" name="size" value="45">
+                            <span class="size-number">45</span>
+                        </label>
+                        <label class="size-option" data-size="46">
+                            <input type="radio" name="size" value="46">
+                            <span class="size-number">46</span>
+                        </label>
+                    </div>
+                </div>
+
+                <h3 class="product-original-price">R$ 499,90</h3>
+                <div class="price-section">
+                    <h2 class="product-promo-price">R$ 142,90</h2>
+                    <span class="discount-badge">80% OFF</span>
+                </div>
+                <span class="PIX-badge">RESTAM 11 UNIDADES</span>
+
+                <div class="fretefundo">
+                    <img src="images/correios.png" class="guarantee-icon">
+                    <div class="ttl-frete">
+                        <span style="font-size: 14px" class="prazo-entrega"><b>Prazo de Entrega:</b> 2 a 3 dias.</span>
+                        <span style="font-size: 14px; font-weight: 500;" class="ip-frete" id="custom-address"><b>FRETE
+                                GRÁTIS</b> para <b>sua região</b></span>
+                    </div>
+                </div>
+
+                <div class="main-container-unico">
+                    <a style="font-size: 16px" id="btn-comprar-original-unico" class="btn-compra-estilo-unico"
+                        href="">COMPRAR
+                        AGORA</a>
+                </div>
+
+                <div class="product-guarantees">
+                    <div class="guarantee-item">
+                        <img src="images/i1.png" class="guarantee-icon">
+                        <div class="guarantee-text">
+                            <span style="line-height: 14px;"><b style="color: #4caf50; font-weight: 400;">Devolução
+                                    grátis.</b> Você tem 30 dias a partir da data de recebimento.</span>
+                        </div>
+                    </div>
+                    <div class="guarantee-item">
+                        <img src="images/i2.png" class="guarantee-icon">
+                        <div class="guarantee-text">
+                            <span style="line-height: 14px;"><b style="color: #4caf50; font-weight: 400;">Compra
+                                    Garantida,</b> receba o produto que está esperando ou devolvemos o dinheiro.</span>
+                        </div>
+                    </div>
+                    <div class="guarantee-item">
+                        <img src="images/i3.png" class="guarantee-icon">
+                        <div class="guarantee-text">
+                            <span>12 meses de garantia de fábrica.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-actions">
+                    <button class="action-link add-to-favorites" onclick="toggleFavorite(this);">
+                        <svg class="action-icon heart-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                        <span class="favorite-text">Adicionar aos favoritos</span>
+                    </button>
+                    <button class="action-link share-button" onclick="shareProduct();">
+                        <svg class="action-icon share-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="18" cy="5" r="3"></circle>
+                            <circle cx="6" cy="12" r="3"></circle>
+                            <circle cx="18" cy="19" r="3"></circle>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                        </svg>
+                        <span>Compartilhar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider div-mobile"></div>
+
+    <div class="avaliacoes">
+
+        <div class="opinioes-geral">
+            <span class="opinioes-produto">Descrição</span><br>
+            <img class="opinioes-produto-img-pc div-desktop" src="images/descricao.webp">
+            <img class="opinioes-produto-img div-mobile" src="images/descricao.webp">
+
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="opinioes-geral" id="opinioes-section">
+            <span class="opinioes-produto">Opiniões do produto</span><br>
+            <img class="opinioes-produto-img-pc div-desktop" src="images/op1.jpg">
+            <img class="opinioes-produto-img div-mobile" src="images/op1.jpg">
+        </div>
+
+    </div>
+
+    <div class="footer-container">
+        <div class="divider"></div>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3 class="footer-title">Institucional</h3>
+                <ul class="footer-list">
+                    <li>Sobre a Netshoes</li>
+                    <li>Política de Privacidade</li>
+                    <li>Programa de Afiliados</li>
+                    <li>Soluções Corporativas</li>
+                    <li>Regulamentos</li>
+                    <li>Relatórios</li>
+                    <li>Programa de Integridade</li>
+                    <li>Blog</li>
+                    <li>Black Friday Magalu</li>
+                    <li>Black Friday Netshoes</li>
+                    <li>Lojas Físicas</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Especiais Netshoes</h3>
+                <ul class="footer-list">
+                    <li>Suplementos</li>
+                    <li>Corrida</li>
+                    <li>Bicicletas</li>
+                    <li>Futebol</li>
+                    <li>Vôlei</li>
+                    <li>Basquete</li>
+                    <li>Motorsport</li>
+                    <li>Saúde Bem-Estar</li>
+                    <li>Aventura</li>
+                    <li>Mundo das Raquetes</li>
+                </ul>
+
+                <h3 class="footer-title footer-subtitle">Mapas do Site</h3>
+                <ul class="footer-list">
+                    <li>Marcas</li>
+                    <li>Tipos de Produtos</li>
+                    <li>Departamentos</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Atendimento</h3>
+                <ul class="footer-list">
+                    <li>Trocas e devoluções</li>
+                    <li>Entregas</li>
+                    <li>Minha Conta</li>
+                    <li>Meus Pedidos</li>
+                    <li>Pagamentos</li>
+                    <li>Cancelamentos</li>
+                    <li>N Card</li>
+                    <li>Segurança & Privacidade</li>
+                    <li>Como Comprar</li>
+                    <li>Acessibilidade</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Netshoes Empresas</h3>
+                <ul class="footer-list">
+                    <li>Marketplace Netshoes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>Termos e condições. Como cuidamos da sua privacidade. Acessibilidade Informações sobre seguros Blog
+                Afiliados Tendências<br><br>© 1999-2025 Netshoes LTDA. CNPJ n.º 03.007.331/0001-41 / Av. das Nações
+                Unidas, nº 3.003, Bonfim, Osasco/SP - CEP 06233-903 - empresa do grupo
+                Netshoes.<br><br>Brasil/Português</span>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        function toggleFavorite(element) {
+            const favoriteText = element.querySelector('.favorite-text');
+            const heartIcon = element.querySelector('.heart-icon');
+
+            if (element.classList.contains('favorited')) {
+                // Remove dos favoritos
+                element.classList.remove('favorited');
+                favoriteText.textContent = 'Adicionar aos favoritos';
+                heartIcon.setAttribute('fill', 'none');
+            } else {
+                // Adiciona aos favoritos
+                element.classList.add('favorited');
+                favoriteText.textContent = 'Adicionado aos favoritos';
+                heartIcon.setAttribute('fill', 'currentColor');
+            }
+        }
+
+        function toggleUseful(button) {
+            const countSpan = button.querySelector('.count');
+            let currentCount = parseInt(countSpan.textContent);
+
+            if (button.classList.contains('active')) {
+                // Desativar - diminuir contador
+                button.classList.remove('active');
+                currentCount = currentCount - 1;
+            } else {
+                // Ativar - aumentar contador
+                button.classList.add('active');
+                currentCount = currentCount + 1;
+            }
+
+            countSpan.textContent = currentCount;
+        }
+
+        async function shareProduct() {
+            const shareData = {
+                title: 'Tênis Adidas Brand 2.0 - QUEIMA DE ESTOQUE',
+                text: 'Confira esta oferta incrível! Tênis Adidas Brand 2.0 com 74% OFF - De R$ 499,90 por apenas R$ 127,70',
+                url: window.location.href
+            };
+
+            try {
+                // Verifica se o navegador suporta a Web Share API
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    // Fallback para navegadores que não suportam Web Share API
+                    fallbackShare(shareData);
+                }
+            } catch (error) {
+                // Se o usuário cancelar o compartilhamento ou houver erro
+                console.log('Compartilhamento cancelado ou erro:', error);
+            }
+        }
+
+        function fallbackShare(shareData) {
+            // Cria um menu de compartilhamento personalizado
+            const shareOptions = [
+                {
+                    name: 'WhatsApp',
+                    url: `https://wa.me/?text=${encodeURIComponent(shareData.text + ' ' + shareData.url)}`
+                },
+                {
+                    name: 'Facebook',
+                    url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareData.url)}`
+                },
+                {
+                    name: 'Twitter',
+                    url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareData.text)}&url=${encodeURIComponent(shareData.url)}`
+                },
+                {
+                    name: 'Copiar Link',
+                    action: 'copy'
+                }
+            ];
+
+            const choice = prompt(
+                'Escolha onde compartilhar:\n' +
+                shareOptions.map((option, index) => `${index + 1}. ${option.name}`).join('\n')
+            );
+
+            const selectedIndex = parseInt(choice) - 1;
+            if (selectedIndex >= 0 && selectedIndex < shareOptions.length) {
+                const selectedOption = shareOptions[selectedIndex];
+
+                if (selectedOption.action === 'copy') {
+                    // Copia o link para a área de transferência
+                    navigator.clipboard.writeText(shareData.url).then(() => {
+                        alert('Link copiado para a área de transferência!');
+                    }).catch(() => {
+                        alert('Não foi possível copiar o link. URL: ' + shareData.url);
+                    });
+                } else {
+                    // Abre a URL de compartilhamento
+                    window.open(selectedOption.url, '_blank');
+                }
+            }
+        }
+
+        function changeMainImage(imageSrc, thumbnailElement) {
+            // Troca a imagem principal
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = imageSrc;
+
+            // Remove a classe active de todos os thumbnails
+            const thumbnails = document.querySelectorAll('.thumbnail-image');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+
+            // Adiciona a classe active ao thumbnail clicado
+            thumbnailElement.classList.add('active');
+        }
+
+        // Função para trocar variação e link do botão
+        function selectVariation(element) {
+            // Remove active de todas as variações
+            const variations = document.querySelectorAll('.variation-option');
+            variations.forEach(variation => variation.classList.remove('active'));
+
+            // Adiciona active na variação selecionada
+            element.classList.add('active');
+
+            // Marca o radio button
+            const radio = element.querySelector('input[type="radio"]');
+            radio.checked = true;
+
+            // Atualiza o nome da cor selecionada
+            const colorName = element.getAttribute('data-color');
+            const selectedColorSpan = document.getElementById('selectedColor');
+            if (selectedColorSpan && colorName) {
+                selectedColorSpan.textContent = colorName;
+            }
+
+            // Pega o link da variação selecionada
+            const newLink = element.getAttribute('data-link');
+
+            // Atualiza o link do botão de compra
+            const buyButton = document.getElementById('btn-comprar-original-unico');
+            if (buyButton && newLink) {
+                buyButton.href = newLink;
+            }
+        }
+
+        // Função para selecionar tamanho (apenas visual)
+        function selectSize(element) {
+            // Remove active de todos os tamanhos
+            const sizes = document.querySelectorAll('.size-option');
+            sizes.forEach(size => size.classList.remove('active'));
+
+            // Adiciona active no tamanho selecionado
+            element.classList.add('active');
+
+            // Marca o radio button
+            const radio = element.querySelector('input[type="radio"]');
+            radio.checked = true;
+
+            // Atualiza o tamanho selecionado
+            const sizeName = element.getAttribute('data-size');
+            const selectedSizeSpan = document.getElementById('selectedSize');
+            if (selectedSizeSpan && sizeName) {
+                selectedSizeSpan.textContent = sizeName;
+            }
+        }
+
+        // Adiciona event listeners para as variações
+        document.addEventListener('DOMContentLoaded', function () {
+            const variations = document.querySelectorAll('.variation-option');
+            variations.forEach(variation => {
+                variation.addEventListener('click', function () {
+                    selectVariation(this);
+                });
+            });
+
+            // Event listeners para os tamanhos
+            const sizes = document.querySelectorAll('.size-option');
+            sizes.forEach(size => {
+                size.addEventListener('click', function () {
+                    selectSize(this);
+                });
+            });
+        });
+
+        // Função para mostrar sidebar do carrinho
+        function showCartSidebar() {
+            const sidebar = document.getElementById('cartSidebar');
+            if (sidebar) {
+                sidebar.classList.add('show');
+                document.body.style.overflow = 'hidden'; // Previne scroll da página
+            }
+        }
+
+        // Função para esconder sidebar do carrinho
+        function hideCartSidebar() {
+            const sidebar = document.getElementById('cartSidebar');
+            if (sidebar) {
+                sidebar.classList.remove('show');
+                document.body.style.overflow = 'auto'; // Restaura scroll da página
+            }
+        }
+
+        // Função para rolar até a seção de opiniões
+        function scrollToOpinions() {
+            const opinioesSection = document.getElementById('opinioes-section');
+            if (opinioesSection) {
+                opinioesSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+    </script>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="sidebar-overlay" onclick="hideCartSidebar()"></div>
+        <div class="sidebar-content">
+            <!-- Header -->
+            <div class="sidebar-header">
+                <h2 class="sidebar-title">Carrinho</h2>
+                <button class="sidebar-close" onclick="hideCartSidebar()">
+                    <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
+                            fill="currentColor"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Cart Content -->
+            <div class="sidebar-body">
+                <div class="empty-cart">
+                    <div class="empty-cart-icon">
+                        <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z"
+                                fill="currentColor"></path>
+                            <path d="M9 8V17H11V8H9ZM13 8V17H15V8H13Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <h3 class="empty-cart-title">Seu carrinho está vazio</h3>
+                    <p class="empty-cart-message">Adicione produtos ao carrinho para continuar com sua compra.</p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="sidebar-footer">
+                <button class="continue-shopping-btn" onclick="hideCartSidebar()">
+                    <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="currentColor">
+                        </path>
+                    </svg>
+                    Voltar às Compras
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
