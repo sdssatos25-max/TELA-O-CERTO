@@ -447,7 +447,7 @@ div.div-desktop {
     color: #000000;
     font-size: 15px;
     font-weight: 500;
-        padding: 0px 0.5em;
+    padding: 0px 0.5em;
 }
 
 .PIX-badge {
@@ -846,6 +846,7 @@ div.div-desktop {
     width: 100%;
     height: auto;
     margin-top: 10px;
+    border-radius: 10px;
 }
 
 .opinioes-produto-img-pc {
@@ -854,6 +855,7 @@ div.div-desktop {
     margin: 10px 0 0 0;
     display: block;
     float: left;
+    border-radius: 10px;
 }
 
 .comentario {
