@@ -79,6 +79,122 @@
         </div>
     </div>
 
+<!-- ========== FAIXA DE ENVIO POR CIDADE (CUSTOM LIQUID) ========== -->
+<div id="geo-shipbar" class="geo-shipbar" role="region" aria-label="Destino de envio">
+  <span class="geo-shipbar__left">
+    <!-- Ícone de localização (SVG inline) -->
+    <svg class="geo-shipbar__icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2C8.686 2 6 4.686 6 8c0 5.25 6 12 6 12s6-6.75 6-12c0-3.314-2.686-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z"/>
+    </svg>
+    <span class="geo-shipbar__text">
+      Frete grátis para:
+      <strong class="geo-shipbar__city" data-city>detectando…</strong>
+    e região.</span>
+  </span>
+  <span class="geo-shipbar__chev" aria-hidden="true">›</span>
+</div>
+
+<style>
+  .geo-shipbar{
+    --bar-bg:#8201FF;         /* cor da faixa */
+    --bar-txt:#fff;           /* cor do texto/ícones */
+    --bar-height:44px;        /* altura da faixa */
+    --bar-radius:8px;         /* arredondamento */
+    --maxw:1200px;            /* largura máxima opcional */
+    --padding-x:14px;         /* padding horizontal */
+
+    background:var(--bar-bg);
+    color:var(--bar-txt);
+    height:var(--bar-height);
+    line-height:var(--bar-height);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 var(--padding-x);
+    margin-top:1px;
+    max-width:var(--maxw);
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    user-select:none;
+  }
+  .geo-shipbar__left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:0;
+  }
+  .geo-shipbar__icon{
+    width:18px; height:18px; flex:0 0 18px; fill:currentColor; opacity:.95;
+  }
+  .geo-shipbar__text{
+    font-size:.95rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .geo-shipbar__city{
+    font-weight:700; text-decoration:underline; text-underline-offset:2px;
+  }
+  .geo-shipbar__chev{
+    font-size:22px; opacity:.9;
+  }
+  @media (max-width:480px){
+    .geo-shipbar{ --bar-height:42px; --padding-x:12px; }
+    .geo-shipbar__text{ font-size:12px; }
+  }
+</style>
+
+<script>
+(function(){
+  const cityEl = document.querySelector('#geo-shipbar [data-city]');
+  if(!cityEl) return;
+
+  const LS_KEY = 'geo_city_name_v1';
+  const FALLBACK_LABEL = 'sua região';
+
+  const setCity = (name) => {
+    const city = (name || '').toString().trim();
+    if (city) {
+      localStorage.setItem(LS_KEY, city);
+      cityEl.textContent = city;
+    } else {
+      cityEl.textContent = FALLBACK_LABEL;
+    }
+  };
+
+  // 1) Usa cache se existir (instantâneo)
+  const cached = localStorage.getItem(LS_KEY);
+  if (cached) setCity(cached);
+
+  // Helper para fetch com timeout
+  const fetchWithTimeout = (url, ms=4500) => {
+    const controller = new AbortController();
+    const t = setTimeout(()=>controller.abort(), ms);
+    return fetch(url, {signal: controller.signal})
+      .finally(()=>clearTimeout(t));
+  };
+
+  // 2) Tenta ipapi.co (boa qualidade + CORS liberado)
+  fetchWithTimeout('https://ipapi.co/json/')
+    .then(r => r.ok ? r.json() : Promise.reject('ipapi.co not ok'))
+    .then(data => {
+      if (data && (data.city || data.region)) {
+        setCity(data.city || data.region);
+        return; // sucesso
+      }
+      throw new Error('ipapi.co no city');
+    })
+    .catch(() => {
+      // 3) Fallback: ipwho.is (sem token, CORS liberado)
+      fetchWithTimeout('https://ipwho.is/')
+        .then(r => r.ok ? r.json() : Promise.reject('ipwho.is not ok'))
+        .then(data => setCity(data.city || data.region || data.country))
+        .catch(() => {
+          // 4) Último recurso: mantém cache (se havia) ou fallback genérico
+          if (!cached) setCity('');
+        });
+    });
+})();
+</script>
+<!-- ========== /FAIXA DE ENVIO POR CIDADE ========== -->
+    
     <div class="product-container">
         <div class="left-column">
             <div style="margin-top: 5px;" class="product-stats div-mobile">
