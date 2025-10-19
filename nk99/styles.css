@@ -127,7 +127,7 @@ div.div-desktop {
 .product-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     padding: 0px 15px;
 }
 
@@ -276,19 +276,20 @@ div.div-desktop {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    margin-top: -10px;
 }
 
 .sold-count {
     font-size: 14px;
-    font-weight: 500;
-    color: #888;
+    font-weight: normal;
+    color: #959595;
 }
 
 .rating-1 {
     font-size: 14px;
-    font-weight: 500;
-    color: #888;
+    font-weight: normal;
+    color: #959595;
     transition: color 0.2s ease;
 }
 
@@ -366,9 +367,9 @@ div.div-desktop {
 .product-title {
     font-size: 24px;
     font-weight: 600;
-    text-align: center;
-    margin: 0 0 10px 0;
+    text-align: left;
     color: #1e293b;
+    margin-bottom: -10px;
 }
 
 .verified-icon {
