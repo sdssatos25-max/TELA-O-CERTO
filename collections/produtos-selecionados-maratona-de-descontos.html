@@ -28,6 +28,57 @@
     }
 </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Função para extrair parâmetros UTM da URL atual
+      function getUtmParameters() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const utmParams = {};
+        for (let [key, value] of urlParams) {
+          if (key.startsWith('utm_')) {
+            utmParams[key] = value;
+          }
+        }
+        return utmParams;
+      }
+
+      // Função para adicionar parâmetros UTM a um link
+      function appendUtmToLink(link) {
+        const url = new URL(link.href);
+        const currentUtmParams = getUtmParameters();
+        const linkParams = new URLSearchParams(url.search);
+
+        // Adiciona apenas os parâmetros UTM que não estão presentes no link
+        for (let [key, value] of Object.entries(currentUtmParams)) {
+          if (!linkParams.has(key)) {
+            linkParams.set(key, value);
+          }
+        }
+
+        // Atualiza o href do link com os novos parâmetros
+        url.search = linkParams.toString();
+        link.href = url.toString();
+      }
+
+      // Intercepta cliques em links
+      document.addEventListener('click', function(e) {
+        const link = e.target.closest('a');
+        if (link && link.href) {
+          // Verifica se o link é interno ou externo
+          const currentOrigin = window.location.origin;
+          const linkOrigin = link.href.startsWith('http') ? new URL(link.href).origin : currentOrigin;
+
+          if (linkOrigin === currentOrigin || !link.href.startsWith('http')) {
+            // Preserva UTM apenas para links internos
+            e.preventDefault(); // Impede o comportamento padrão
+            appendUtmToLink(link);
+            window.location.href = link.href; // Navega para o novo URL
+          }
+        }
+      });
+    });
+  </script>
+
   <link rel="preconnect" href="https://cdn.shopify.com/" crossorigin>
 
 
